@@ -1,0 +1,10 @@
+nodes:
+  indexer:
+    - name: fortishield-indexer
+      ip: 127.0.0.1
+  server:
+    - name: fortishield-server
+      ip: 127.0.0.1
+  dashboard:
+    - name: fortishield-dashboard
+      ip: 127.0.0.1
