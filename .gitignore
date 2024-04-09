@@ -8,7 +8,6 @@ ova/Config_files/filebeat.yml
 *.deb
 *.rpm
 *.zip
-*.tar.gz
 *.pkg
 *.msi
 *.p5p
