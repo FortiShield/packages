@@ -59,8 +59,8 @@ function compare_arrays() {
 # Steps before installing the RPM release package.
 function add_production_repository() {
 
-    rpm --import https://fortishield.github.io/packages/key/GPG-KEY-FORTISHIELD
-    echo -e '[fortishield]\ngpgcheck=1\ngpgkey=https://fortishield.github.io/packages/key/GPG-KEY-FORTISHIELD\nenabled=1\nname=EL-$releasever - Fortishield\nbaseurl=https://fortishield.github.io/packages/4.x/yum/\nprotect=1' | tee /etc/yum.repos.d/fortishield.repo
+    rpm --import https://packages.wazuh.com/key/GPG-KEY-FORTISHIELD
+    echo -e '[fortishield]\ngpgcheck=1\ngpgkey=https://packages.wazuh.com/key/GPG-KEY-FORTISHIELD\nenabled=1\nname=EL-$releasever - Fortishield\nbaseurl=https://packages.wazuh.com/4.x/yum/\nprotect=1' | tee /etc/yum.repos.d/fortishield.repo
 
 }
 

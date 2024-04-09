@@ -33,9 +33,9 @@ fi
 
 # Including files
 if [ "${reference}" ];then
-    curl -sL https://github.com/fortishield/fortishield-packages/tarball/"${reference}" | tar xz
+    curl -sL https://github.com/fortishield/packages/tarball/"${reference}" | tar xz
     cp -r ./fortishield*/* /root/
-    version=$(curl -sL https://raw.githubusercontent.com/fortishield/fortishield-packages/${reference}/VERSION | cat)
+    version=$(curl -sL https://raw.githubusercontent.com/fortishield/packages/${reference}/VERSION | cat)
 else
     version=$(cat /root/VERSION)
 fi
@@ -54,10 +54,10 @@ if [ "${repository}" ];then
             exit 1
         fi
     else
-        url="https://fortishield.github.io/packages-dev/${repository}/ui/dashboard/fortishield-${version}-${revision}.zip"
+        url="https://packages.wazuh.com-dev/${repository}/ui/dashboard/fortishield-${version}-${revision}.zip"
     fi
 else
-    url="https://fortishield.github.io/packages-dev/pre-release/ui/dashboard/fortishield-${version}-${revision}.zip"
+    url="https://packages.wazuh.com-dev/pre-release/ui/dashboard/fortishield-${version}-${revision}.zip"
 fi
 
 # Set directories

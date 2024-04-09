@@ -43,7 +43,7 @@ ctrl_c() {
 
 set_version() {
     if [ "${reference}" ];then
-        version=$(curl -sL https://raw.githubusercontent.com/fortishield/fortishield-packages/${reference}/VERSION | cat)
+        version=$(curl -sL https://raw.githubusercontent.com/fortishield/packages/${reference}/VERSION | cat)
     else
         version=$(cat ${current_path}/../../../VERSION)
     fi

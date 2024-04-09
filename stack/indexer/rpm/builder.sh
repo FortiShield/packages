@@ -28,7 +28,7 @@ if [ "${future}" = "yes" ];then
     version="99.99.0"
 else
     if [ "${reference}" ];then
-        version=$(curl -sL https://raw.githubusercontent.com/fortishield/fortishield-packages/${reference}/VERSION | cat)
+        version=$(curl -sL https://raw.githubusercontent.com/fortishield/packages/${reference}/VERSION | cat)
     else
         version=$(cat /root/VERSION)
     fi
@@ -48,7 +48,7 @@ mkdir ${build_dir}/${pkg_name}
 
 # Including spec file
 if [ "${reference}" ];then
-    curl -sL https://github.com/fortishield/fortishield-packages/tarball/${reference} | tar zx
+    curl -sL https://github.com/fortishield/packages/tarball/${reference} | tar zx
     cp ./fortishield*/stack/indexer/rpm/${target}.spec ${rpm_build_dir}/SPECS/${pkg_name}.spec
     cp -r ./fortishield*/* /root/
 else

@@ -8,7 +8,7 @@ source "${base_dir}"/bach.sh
     filebeat_cert_path="/etc/filebeat/certs/"
     fortishield_major="4.3"
     filebeat_fortishield_template="https://raw.githubusercontent.com/fortishield/fortishield/${fortishield_major}/extensions/elasticsearch/7.x/fortishield-template.json"
-    repobaseurl="https://fortishield.github.io/packages/4.x"
+    repobaseurl="https://packages.wazuh.com/4.x"
     filebeat_fortishield_module="${repobaseurl}/filebeat/fortishield-filebeat-0.1.tar.gz"
 }
 

@@ -26,7 +26,7 @@ if [ "${future}" = "yes" ];then
     version="99.99.0"
 else
     if [ "${reference}" ];then
-        version=$(curl -sL https://raw.githubusercontent.com/fortishield/fortishield-packages/${reference}/VERSION | cat)
+        version=$(curl -sL https://raw.githubusercontent.com/fortishield/packages/${reference}/VERSION | cat)
     else
         version=$(cat /root/VERSION)
     fi
@@ -42,7 +42,7 @@ mkdir -p ${source_dir}/debian
 
 # Including spec file
 if [ "${reference}" ];then
-    curl -sL https://github.com/fortishield/fortishield-packages/tarball/${reference} | tar zx
+    curl -sL https://github.com/fortishield/packages/tarball/${reference} | tar zx
     cp -r ./fortishield*/stack/indexer/deb/debian/* ${source_dir}/debian/
     cp -r ./fortishield*/* /root/
 else

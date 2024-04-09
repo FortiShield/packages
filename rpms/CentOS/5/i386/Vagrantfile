@@ -3,7 +3,7 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "fortishield/CentOS-5-i386"
-  config.vm.box_url = "https://fortishield.github.io/packages-dev/utils/vagrant/centos/5/i386/CentOS-5-i386.box"
+  config.vm.box_url = "https://packages.wazuh.com-dev/utils/vagrant/centos/5/i386/CentOS-5-i386.box"
 
   config.vm.provider "virtualbox" do |vb|
     vb.memory = 2048

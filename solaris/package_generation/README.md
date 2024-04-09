@@ -17,7 +17,7 @@ To build a Solaris package using vagrant, you need to download this repository c
 
 1. Download this repository, copy the `solaris10` or `solaris11` directory into `package_generation/src` and go to the `package_generation` directory:
     ```bash
-    $ git clone https://github.com/fortishield/fortishield-packages
+    $ git clone https://github.com/fortishield/packages
     $ cp -r fortishield-packages/solaris/solaris10 fortishield-packages/solaris/package_generation/src
     $ cd fortishield-packages/solaris/package_generation
     ```

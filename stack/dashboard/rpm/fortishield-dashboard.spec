@@ -93,9 +93,9 @@ find %{buildroot}%{CONFIG_DIR} -exec chown %{USER}:%{GROUP} {} \;
 chown root:root %{buildroot}/etc/systemd/system/fortishield-dashboard.service
 
 if [ "%{version}" = "99.99.0" ];then
-    runuser %{USER} --shell="/bin/bash" --command="%{buildroot}%{INSTALL_DIR}/bin/opensearch-dashboards-plugin install https://fortishield.github.io/packages-dev/futures/ui/dashboard/fortishield-99.99.0-%{release}.zip"
-    runuser %{USER} --shell="/bin/bash" --command="%{buildroot}%{INSTALL_DIR}/bin/opensearch-dashboards-plugin install https://fortishield.github.io/packages-dev/futures/ui/dashboard/fortishieldCheckUpdates-99.99.0-%{release}.zip"
-    runuser %{USER} --shell="/bin/bash" --command="%{buildroot}%{INSTALL_DIR}/bin/opensearch-dashboards-plugin install https://fortishield.github.io/packages-dev/futures/ui/dashboard/fortishieldCore-99.99.0-%{release}.zip"
+    runuser %{USER} --shell="/bin/bash" --command="%{buildroot}%{INSTALL_DIR}/bin/opensearch-dashboards-plugin install https://packages.wazuh.com-dev/futures/ui/dashboard/fortishield-99.99.0-%{release}.zip"
+    runuser %{USER} --shell="/bin/bash" --command="%{buildroot}%{INSTALL_DIR}/bin/opensearch-dashboards-plugin install https://packages.wazuh.com-dev/futures/ui/dashboard/fortishieldCheckUpdates-99.99.0-%{release}.zip"
+    runuser %{USER} --shell="/bin/bash" --command="%{buildroot}%{INSTALL_DIR}/bin/opensearch-dashboards-plugin install https://packages.wazuh.com-dev/futures/ui/dashboard/fortishieldCore-99.99.0-%{release}.zip"
 else
     runuser %{USER} --shell="/bin/bash" --command="%{buildroot}%{INSTALL_DIR}/bin/opensearch-dashboards-plugin install %{_url_plugin_main}"
     runuser %{USER} --shell="/bin/bash" --command="%{buildroot}%{INSTALL_DIR}/bin/opensearch-dashboards-plugin install %{_url_plugin_updates}"

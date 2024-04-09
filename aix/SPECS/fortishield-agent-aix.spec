@@ -22,7 +22,7 @@ Fortishield is an open source security monitoring solution for threat detection,
 %prep
 %setup -q
 deps_version=`cat src/Makefile | grep "DEPS_VERSION =" | cut -d " " -f 3`
-cd src && gmake clean && gmake deps RESOURCES_URL=http://fortishield.github.io/packages/deps/${deps_version} TARGET=agent
+cd src && gmake clean && gmake deps RESOURCES_URL=http://packages.wazuh.com/deps/${deps_version} TARGET=agent
 gmake TARGET=agent USE_SELINUX=no
 cd ..
 

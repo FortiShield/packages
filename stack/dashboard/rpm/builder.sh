@@ -28,7 +28,7 @@ if [ "${future}" = "yes" ];then
     version="99.99.0"
 else
     if [ "${reference}" ];then
-        version=$(curl -sL https://raw.githubusercontent.com/fortishield/fortishield-packages/${reference}/VERSION | cat)
+        version=$(curl -sL https://raw.githubusercontent.com/fortishield/packages/${reference}/VERSION | cat)
     else
         version=$(cat /root/VERSION)
     fi
@@ -43,7 +43,7 @@ if [ "${plugin_main}" ] && [ "${plugin_updates}" ] && [ "${plugin_core}" ] ;then
             exit 1
         fi
     else
-        url_main="https://fortishield.github.io/packages-dev/${app_url}/ui/dashboard/fortishield-${version}-${revision}.zip"
+        url_main="https://packages.wazuh.com-dev/${app_url}/ui/dashboard/fortishield-${version}-${revision}.zip"
     fi
     if [[ "${plugin_updates}" =~ $valid_url ]];then
         url_updates="${plugin_updates}"
@@ -52,7 +52,7 @@ if [ "${plugin_main}" ] && [ "${plugin_updates}" ] && [ "${plugin_core}" ] ;then
             exit 1
         fi
     else
-        url_updates="https://fortishield.github.io/packages-dev/${app_url}/ui/dashboard/fortishieldCheckUpdates-${version}-${revision}.zip"
+        url_updates="https://packages.wazuh.com-dev/${app_url}/ui/dashboard/fortishieldCheckUpdates-${version}-${revision}.zip"
     fi
     if [[ "${plugin_core}" =~ $valid_url ]];then
         url_core="${plugin_core}"
@@ -61,12 +61,12 @@ if [ "${plugin_main}" ] && [ "${plugin_updates}" ] && [ "${plugin_core}" ] ;then
             exit 1
         fi
     else
-        url_core="https://fortishield.github.io/packages-dev/${app_url}/ui/dashboard/fortishieldCore-${version}-${revision}.zip"
+        url_core="https://packages.wazuh.com-dev/${app_url}/ui/dashboard/fortishieldCore-${version}-${revision}.zip"
     fi
 else
-    url_main="https://fortishield.github.io/packages-dev/pre-release/ui/dashboard/fortishield-${version}-${revision}.zip"
-    url_updates="https://fortishield.github.io/packages-dev/pre-release/ui/dashboard/fortishieldCheckUpdates-${version}-${revision}.zip"
-    url_core="https://fortishield.github.io/packages-dev/pre-release/ui/dashboard/fortishieldCore-${version}-${revision}.zip"
+    url_main="https://packages.wazuh.com-dev/pre-release/ui/dashboard/fortishield-${version}-${revision}.zip"
+    url_updates="https://packages.wazuh.com-dev/pre-release/ui/dashboard/fortishieldCheckUpdates-${version}-${revision}.zip"
+    url_core="https://packages.wazuh.com-dev/pre-release/ui/dashboard/fortishieldCore-${version}-${revision}.zip"
 fi
 
 # Build directories
@@ -83,7 +83,7 @@ mkdir ${build_dir}/${pkg_name}
 
 # Including spec file
 if [ "${reference}" ];then
-    curl -sL https://github.com/fortishield/fortishield-packages/tarball/${reference} | tar zx
+    curl -sL https://github.com/fortishield/packages/tarball/${reference} | tar zx
     cp ./fortishield*/stack/dashboard/rpm/${target}.spec ${rpm_build_dir}/SPECS/${pkg_name}.spec
     cp -r ./fortishield*/* /root/
 else

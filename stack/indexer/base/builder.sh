@@ -32,9 +32,9 @@ fi
 
 # Including files
 if [ "${reference}" ];then
-    curl -sL https://github.com/fortishield/fortishield-packages/tarball/"${reference}" | tar xz
+    curl -sL https://github.com/fortishield/packages/tarball/"${reference}" | tar xz
     cp -r ./fortishield*/* /root/
-    version=$(curl -sL https://raw.githubusercontent.com/fortishield/fortishield-packages/${reference}/VERSION | cat)
+    version=$(curl -sL https://raw.githubusercontent.com/fortishield/packages/${reference}/VERSION | cat)
 else
     version=$(cat /root/VERSION)
 fi

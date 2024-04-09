@@ -53,7 +53,7 @@ make clean
       MSGPACK="USE_MSGPACK_OPT=no"
     %endif
     deps_version=`cat Makefile | grep "DEPS_VERSION =" | cut -d " " -f 3`
-    make deps RESOURCES_URL=http://fortishield.github.io/packages/deps/${deps_version} TARGET=agent
+    make deps RESOURCES_URL=http://packages.wazuh.com/deps/${deps_version} TARGET=agent
     make -j%{_threads} TARGET=agent USE_AUDIT=no USE_SELINUX=yes USE_EXEC_ENVIRON=no DEBUG=%{_debugenabled} ${MSGPACK}
 
 %endif

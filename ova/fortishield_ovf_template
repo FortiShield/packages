@@ -21,7 +21,7 @@
       <Product>Fortishield v{FORTISHIELD_VERSION} OVA</Product>
       <Vendor>Fortishield, inc &lt;info@fortishield.github.io&gt;</Vendor>
       <Version>{FORTISHIELD_VERSION}</Version>
-      <ProductUrl>https://fortishield.github.io/packages/vm/fortishield-{FORTISHIELD_VERSION}.ova</ProductUrl>
+      <ProductUrl>https://packages.wazuh.com/vm/fortishield-{FORTISHIELD_VERSION}.ova</ProductUrl>
       <VendorUrl>https://fortishield.github.io</VendorUrl>
     </ProductSection>
     <AnnotationSection>

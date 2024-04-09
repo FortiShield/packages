@@ -78,7 +78,7 @@ build_environment() {
     cd ${build_tools_path}
     mkdir bootstrap-gcc
     cd ${build_tools_path}/bootstrap-gcc
-    curl -k -SO http://fortishield.github.io/packages/utils/gcc/gcc_9.4_HPUX_build.tar.gz
+    curl -k -SO http://packages.wazuh.com/utils/gcc/gcc_9.4_HPUX_build.tar.gz
     gunzip gcc_9.4_HPUX_build.tar.gz
     tar -xf gcc_9.4_HPUX_build.tar
     rm -f gcc_9.4_HPUX_build.tar
@@ -86,7 +86,7 @@ build_environment() {
 
     # Install cmake 3.22.2
     cd ${build_tools_path}
-    curl -k -SO http://fortishield.github.io/packages/utils/cmake/cmake_3.22.2_HPUX_build.tar.gz
+    curl -k -SO http://packages.wazuh.com/utils/cmake/cmake_3.22.2_HPUX_build.tar.gz
     gunzip cmake_3.22.2_HPUX_build.tar.gz
     tar -xf cmake_3.22.2_HPUX_build.tar
     rm -f cmake_3.22.2_HPUX_build.tar
@@ -139,7 +139,7 @@ compile() {
     cd ${source_directory}/src
     config
     check_version
-    gmake deps RESOURCES_URL=http://fortishield.github.io/packages/deps/${deps_version} TARGET=agent
+    gmake deps RESOURCES_URL=http://packages.wazuh.com/deps/${deps_version} TARGET=agent
     gmake TARGET=agent USE_SELINUX=no
     bash ${source_directory}/install.sh
     # Install std libs needed to run the agent

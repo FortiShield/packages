@@ -72,7 +72,7 @@ build_perl() {
 build_cmake() {
   socket_lib=$(find /opt/freeware/lib/gcc/*/6.3.0/include-fixed/sys/ -name socket.h)
   mv ${socket_lib} ${socket_lib}.bkp
-  curl -LO http://fortishield.github.io/packages/utils/cmake/cmake-3.12.4.tar.gz -k -s
+  curl -LO http://packages.wazuh.com/utils/cmake/cmake-3.12.4.tar.gz -k -s
   ln -s /usr/bin/make /usr/bin/gmake
   gunzip cmake-3.12.4.tar.gz && tar -xf cmake-3.12.4.tar && cd cmake-3.12.4
   ./bootstrap
@@ -98,86 +98,86 @@ build_environment() {
 
   rpm="rpm -Uvh --nodeps"
 
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/libiconv-1.14-22.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/autoconf-2.71-1.aix6.1.noarch.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/automake-1.16.2-1.aix6.1.noarch.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/bash-4.4-4.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/bzip2-1.0.6-2.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/coreutils-8.25-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/expat-2.2.6-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/expat-devel-2.2.6-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/gettext-0.17-1.aix5.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/glib2-2.33.2-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/glib2-devel-2.33.2-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/gmp-6.1.1-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/gmp-devel-6.1.1-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/grep-3.0-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/gzip-1.8-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/info-6.4-1.aix5.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/libffi-3.2.1-2.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/libidn-1.33-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/libsigsegv-2.10-2.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/libtool-2.4.6-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/m4-1.4.18-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/make-4.3-1.aix5.3.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/openldap-2.4.44-6.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/openssl-1.0.2g-3.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/openssl-devel-1.0.2g-3.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/pcre-8.42-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/pkg-config-0.29.1-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/readline-7.0-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/sed-4.7-2.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/wget-1.19-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/zlib-1.2.11-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/popt-1.16-2.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/rsync-3.1.2-3.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/tar-1.32-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/curl-7.72.0-1.aix5.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/readline-devel-7.0-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/guile-1.8.8-2.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/unixODBC-2.3.1-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/db-4.8.24-4.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/gdbm-1.10-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/ncurses-6.2-2.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/sqlite-3.33.0-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/sqlite-libs-3.33.0-1.aix6.1.ppc.rpm || true
-  $rpm http://fortishield.github.io/packages-dev/deps/aix/python-2.7.15-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/libiconv-1.14-22.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/autoconf-2.71-1.aix6.1.noarch.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/automake-1.16.2-1.aix6.1.noarch.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/bash-4.4-4.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/bzip2-1.0.6-2.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/coreutils-8.25-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/expat-2.2.6-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/expat-devel-2.2.6-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/gettext-0.17-1.aix5.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/glib2-2.33.2-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/glib2-devel-2.33.2-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/gmp-6.1.1-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/gmp-devel-6.1.1-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/grep-3.0-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/gzip-1.8-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/info-6.4-1.aix5.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/libffi-3.2.1-2.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/libidn-1.33-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/libsigsegv-2.10-2.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/libtool-2.4.6-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/m4-1.4.18-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/make-4.3-1.aix5.3.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/openldap-2.4.44-6.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/openssl-1.0.2g-3.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/openssl-devel-1.0.2g-3.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/pcre-8.42-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/pkg-config-0.29.1-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/readline-7.0-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/sed-4.7-2.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/wget-1.19-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/zlib-1.2.11-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/popt-1.16-2.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/rsync-3.1.2-3.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/tar-1.32-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/curl-7.72.0-1.aix5.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/readline-devel-7.0-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/guile-1.8.8-2.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/unixODBC-2.3.1-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/db-4.8.24-4.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/gdbm-1.10-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/ncurses-6.2-2.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/sqlite-3.33.0-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/sqlite-libs-3.33.0-1.aix6.1.ppc.rpm || true
+  $rpm http://packages.wazuh.com-dev/deps/aix/python-2.7.15-1.aix6.1.ppc.rpm || true
 
 
 
   if [[ "${aix_major}" = "6" ]] || [[ "${aix_major}" = "7" ]]; then
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/mpfr-3.1.4-1.aix6.1.ppc.rpm || true
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/libmpc-1.0.3-2.aix6.1.ppc.rpm || true
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/file-5.32-1.aix6.1.ppc.rpm || true
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/file-libs-5.32-1.aix6.1.ppc.rpm || true
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/perl-5.30.3-2.aix6.1.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/mpfr-3.1.4-1.aix6.1.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/libmpc-1.0.3-2.aix6.1.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/file-5.32-1.aix6.1.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/file-libs-5.32-1.aix6.1.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/perl-5.30.3-2.aix6.1.ppc.rpm || true
   fi
 
   if [[ "${aix_major}" = "6" ]]; then
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/gcc-6.3.0-1.aix6.1.ppc.rpm || true
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/gcc-cpp-6.3.0-1.aix6.1.ppc.rpm || true
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/libgcc-6.3.0-1.aix6.1.ppc.rpm || true
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/libstdc%2B%2B-6.3.0-1.aix6.1.ppc.rpm || true
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/libstdc%2B%2B-devel-6.3.0-1.aix6.1.ppc.rpm || true
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/gcc-c%2B%2B-6.3.0-1.aix6.1.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/gcc-6.3.0-1.aix6.1.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/gcc-cpp-6.3.0-1.aix6.1.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/libgcc-6.3.0-1.aix6.1.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/libstdc%2B%2B-6.3.0-1.aix6.1.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/libstdc%2B%2B-devel-6.3.0-1.aix6.1.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/gcc-c%2B%2B-6.3.0-1.aix6.1.ppc.rpm || true
   fi
 
   if [[ "${aix_major}" = "7" ]] && [[ "${aix_minor}" = "1" ]]; then
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/gcc-6.3.0-1.aix7.1.ppc.rpm || true
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/gcc-cpp-6.3.0-1.aix7.1.ppc.rpm || true
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/libgcc-6.3.0-1.aix7.1.ppc.rpm || true
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/libstdc%2B%2B-6.3.0-1.aix7.1.ppc.rpm || true
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/libstdc%2B%2B-devel-6.3.0-1.aix7.1.ppc.rpm || true
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/gcc-c%2B%2B-6.3.0-1.aix7.1.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/gcc-6.3.0-1.aix7.1.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/gcc-cpp-6.3.0-1.aix7.1.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/libgcc-6.3.0-1.aix7.1.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/libstdc%2B%2B-6.3.0-1.aix7.1.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/libstdc%2B%2B-devel-6.3.0-1.aix7.1.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/gcc-c%2B%2B-6.3.0-1.aix7.1.ppc.rpm || true
   fi
 
   if [[ "${aix_major}" = "7" ]] && [[ "${aix_minor}" = "2" ]]; then
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/gcc-6.3.0-1.aix7.2.ppc.rpm || true
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/gcc-cpp-6.3.0-1.aix7.2.ppc.rpm || true
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/libgcc-6.3.0-1.aix7.2.ppc.rpm || true
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/libstdc%2B%2B-6.3.0-1.aix7.2.ppc.rpm || true
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/libstdc%2B%2B-devel-6.3.0-1.aix7.2.ppc.rpm || true
-    $rpm http://fortishield.github.io/packages-dev/deps/aix/gcc-c%2B%2B-6.3.0-1.aix7.2.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/gcc-6.3.0-1.aix7.2.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/gcc-cpp-6.3.0-1.aix7.2.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/libgcc-6.3.0-1.aix7.2.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/libstdc%2B%2B-6.3.0-1.aix7.2.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/libstdc%2B%2B-devel-6.3.0-1.aix7.2.ppc.rpm || true
+    $rpm http://packages.wazuh.com-dev/deps/aix/gcc-c%2B%2B-6.3.0-1.aix7.2.ppc.rpm || true
   fi
 
   build_perl

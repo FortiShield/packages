@@ -102,7 +102,7 @@ build_ova() {
     vboxmanage export "${VM_EXPORT}" -o "${OVA_VM}" \
     --vsys 0 \
     --product "Fortishield v${OVA_VERSION} OVA" \
-    --producturl "https://fortishield.github.io/packages/vm/fortishield-${OVA_VERSION}.ova" \
+    --producturl "https://packages.wazuh.com/vm/fortishield-${OVA_VERSION}.ova" \
     --vendor "Fortishield, inc <info@fortishield.github.io>" --vendorurl "https://fortishield.github.io" \
     --version "$OVA_VERSION" --description "Fortishield enhances security visibility in your infrastructure by monitoring endpoints at the operating system and application levels. Its capabilities include log analysis, file integrity monitoring, intrusion detection, and compliance monitoring." \
     || clean 1

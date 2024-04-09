@@ -72,15 +72,15 @@ build_environment(){
     pkgadd -d gmake-4.2.1%2cREV%3d2016.08.04-SunOS5.10-sparc-CSW.pkg -n all
 
     # Compile GCC-5.5 and CMake
-    curl -L http://fortishield.github.io/packages/utils/gcc/gcc-5.5.0.tar.gz | gtar xz
+    curl -L http://packages.wazuh.com/utils/gcc/gcc-5.5.0.tar.gz | gtar xz
     cd gcc-5.5.0
-    curl -L http://fortishield.github.io/packages/utils/gcc/mpfr-2.4.2.tar.bz2 | gtar xj
+    curl -L http://packages.wazuh.com/utils/gcc/mpfr-2.4.2.tar.bz2 | gtar xj
     mv mpfr-2.4.2 mpfr
-    curl -L http://fortishield.github.io/packages/utils/gcc/gmp-4.3.2.tar.bz2 | gtar xj
+    curl -L http://packages.wazuh.com/utils/gcc/gmp-4.3.2.tar.bz2 | gtar xj
     mv gmp-4.3.2 gmp
-    curl -L http://fortishield.github.io/packages/utils/gcc/mpc-0.8.1.tar.gz | gtar xz
+    curl -L http://packages.wazuh.com/utils/gcc/mpc-0.8.1.tar.gz | gtar xz
     mv mpc-0.8.1 mpc
-    curl -L http://fortishield.github.io/packages/utils/gcc/isl-0.14.tar.bz2 | gtar xj
+    curl -L http://packages.wazuh.com/utils/gcc/isl-0.14.tar.bz2 | gtar xj
     mv isl-0.14 isl
     unset CPLUS_INCLUDE_PATH
     unset LD_LIBRARY_PATH
@@ -99,7 +99,7 @@ build_environment(){
     rm -rf gcc-*
     ln -sf /usr/local/gcc-5.5.0/bin/g++ /usr/bin/g++
 
-    curl -sL http://fortishield.github.io/packages/utils/cmake/cmake-3.18.3.tar.gz | gtar xz
+    curl -sL http://packages.wazuh.com/utils/cmake/cmake-3.18.3.tar.gz | gtar xz
     cd cmake-3.18.3
     ./bootstrap
     gmake && gmake install

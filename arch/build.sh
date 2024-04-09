@@ -49,7 +49,7 @@ if [[ "${use_local_specs}" == "no" ]]; then
     mkdir -p ${tmp_specs_path}
     cd ${tmp_specs_path}
     specs_path=${tmp_specs_path}
-    curl -sL https://github.com/fortishield/fortishield-packages/tarball/${fortishield_packages_branch} | tar zx
+    curl -sL https://github.com/fortishield/packages/tarball/${fortishield_packages_branch} | tar zx
     specs_path=`pwd`/$(find . -type d -name "SPECS" -path "*arch*")
     tmp_specs_path=${specs_path}
 else

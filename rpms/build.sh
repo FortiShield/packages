@@ -68,7 +68,7 @@ cp -R fortishield-* ${build_dir}/${package_name}
 if [ "${use_local_specs}" = "no" ]; then
     specs_path="/downloaded_tmp_specs"
     mkdir -p "${specs_path}"
-    curl -L "https://raw.githubusercontent.com/fortishield/fortishield-packages/${fortishield_packages_branch}/rpms/SPECS/fortishield-${build_target}.spec" -o "${specs_path}/fortishield-${build_target}.spec"
+    curl -L "https://raw.githubusercontent.com/fortishield/packages/${fortishield_packages_branch}/rpms/SPECS/fortishield-${build_target}.spec" -o "${specs_path}/fortishield-${build_target}.spec"
 else
     specs_path="/specs"
 fi

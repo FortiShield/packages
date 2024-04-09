@@ -9,7 +9,7 @@ source "${base_dir}"/bach.sh
     fortishield_version="5.0.0"
     elasticsearch_oss_version="7.10.2"
     fortishield_kibana_plugin_revision="1"
-    repobaseurl="https://fortishield.github.io/packages/4.x"
+    repobaseurl="https://packages.wazuh.com/4.x"
     kibana_fortishield_plugin="${repobaseurl}/ui/kibana/fortishield_kibana-${fortishield_version}_${elasticsearch_oss_version}-${fortishield_kibana_plugin_revision}.zip"
 }
 

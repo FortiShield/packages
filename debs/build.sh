@@ -49,7 +49,7 @@ mkdir -p ${build_dir}/${build_target}
 cp -R fortishield* ${build_dir}/${build_target}/fortishield-${build_target}-${fortishield_version}
 
 if [ "${use_local_specs}" = "no" ]; then
-    curl -sL https://github.com/fortishield/fortishield-packages/tarball/${fortishield_packages_branch} | tar zx
+    curl -sL https://github.com/fortishield/packages/tarball/${fortishield_packages_branch} | tar zx
     package_files="fortishield*/debs"
     specs_path=$(find ${package_files} -type d -name "SPECS" -path "*debs*")
 else

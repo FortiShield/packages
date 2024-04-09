@@ -3,7 +3,7 @@
 
 Vagrant.configure("2") do |config|
 
-  config.vm.box_url = "https://fortishield.github.io/packages-dev/vms/ova/amznlinux-2.box"
+  config.vm.box_url = "https://packages.wazuh.com-dev/vms/ova/amznlinux-2.box"
   config.vm.box = "amznlinux-2"
   config.vm.hostname = "fortishield-server"
   config.vm.provider "virtualbox" do |vb|

@@ -70,19 +70,19 @@ function buildInstaller() {
     ## Installation variables
     if [ -n "${development}" ]; then
         echo 'readonly development=1' >> "${output_script_path}"
-        echo 'readonly repogpg="https://fortishield.github.io/packages-dev/key/GPG-KEY-FORTISHIELD"' >> "${output_script_path}"
-        echo 'readonly repobaseurl="https://fortishield.github.io/packages-dev/'${devrepo}'"' >> "${output_script_path}"
+        echo 'readonly repogpg="https://packages.wazuh.com-dev/key/GPG-KEY-FORTISHIELD"' >> "${output_script_path}"
+        echo 'readonly repobaseurl="https://packages.wazuh.com-dev/'${devrepo}'"' >> "${output_script_path}"
         echo 'readonly reporelease="unstable"' >> "${output_script_path}"
         echo 'readonly filebeat_fortishield_module="${repobaseurl}/filebeat/fortishield-filebeat-0.4.tar.gz"' >> "${output_script_path}"
-        echo 'readonly bucket="fortishield.github.io/packages-dev"' >> "${output_script_path}"
+        echo 'readonly bucket="packages.wazuh.com-dev"' >> "${output_script_path}"
         echo 'readonly repository="'"${devrepo}"'"' >> "${output_script_path}"
         sed -i 's|v${fortishield_version}|${fortishield_version}|g' "${resources_installer}/installVariables.sh"
     else
-        echo 'readonly repogpg="https://fortishield.github.io/packages/key/GPG-KEY-FORTISHIELD"' >> "${output_script_path}"
-        echo 'readonly repobaseurl="https://fortishield.github.io/packages/4.x"' >> "${output_script_path}"
+        echo 'readonly repogpg="https://packages.wazuh.com/key/GPG-KEY-FORTISHIELD"' >> "${output_script_path}"
+        echo 'readonly repobaseurl="https://packages.wazuh.com/4.x"' >> "${output_script_path}"
         echo 'readonly reporelease="stable"' >> "${output_script_path}"
         echo 'readonly filebeat_fortishield_module="${repobaseurl}/filebeat/fortishield-filebeat-0.4.tar.gz"' >> "${output_script_path}"
-        echo 'readonly bucket="fortishield.github.io/packages"' >> "${output_script_path}"
+        echo 'readonly bucket="packages.wazuh.com"' >> "${output_script_path}"
         echo 'readonly repository="4.x"' >> "${output_script_path}"
     fi
     echo >> "${output_script_path}"

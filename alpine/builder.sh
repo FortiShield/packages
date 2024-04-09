@@ -71,7 +71,7 @@ pkg_file="${file_name}.apk"
 
 # Including spec file
 if [ "${local_spec}" = "no" ]; then
-    curl -sL https://github.com/fortishield/fortishield-packages/tarball/${spec_reference} | tar zx
+    curl -sL https://github.com/fortishield/packages/tarball/${spec_reference} | tar zx
     cp -r ./fortishield*/alpine/SPECS/${target} ${spec_path}/
 else
     cp -r /root/repository/alpine/SPECS/${target} ${spec_path}/

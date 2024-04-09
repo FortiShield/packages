@@ -53,7 +53,7 @@ build_deb() {
         ../base/generate_base.sh -s ${outdir} -r ${revision} -f ${filebeat_module_reference} ${base_cmd}
     else
         if [ "${reference}" ];then
-            version=$(curl -sL https://raw.githubusercontent.com/fortishield/fortishield-packages/${reference}/VERSION | cat)
+            version=$(curl -sL https://raw.githubusercontent.com/fortishield/packages/${reference}/VERSION | cat)
         else
             version=$(cat ${current_path}/../../../VERSION)
         fi
